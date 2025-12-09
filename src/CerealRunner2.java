@@ -11,11 +11,17 @@ import java.io.FileNotFoundException;
  * Goal: Read the CSV file and create Cereal objects for each row
  * Expected output: "76 records created."
  */
+
+
 public class CerealRunner2 {
-    // Declare your instance variable here
-    // You need an ArrayList to store Cereal objects
+    //declare your instance variables here
+    // you need an ArrayList to store cereal objects
 
+    ArrayList<Cereal> cereals;
 
+    
+
+    
 
     /**
      * Constructor - reads the CSV file and populates the cereals ArrayList
@@ -34,9 +40,31 @@ public class CerealRunner2 {
      * 7. Handle FileNotFoundException with try-catch
      */
     public CerealRunner2() {
+        cereals = new ArrayList<Cereal>();
 
+        try {
+            File cerealFile = new File("cerealSubset.csv");
+            Scanner fileScanner = new Scanner(cerealFile);
 
+            while(true){
+                if(!fileScanner.hasNextLine()){
+                    fileScanner.close();
+                    System.out.println("Loaded " + cereals.size() + " cereals.\n");
+                    break;
+                }
+                //do more stuff 
+                String theNextLine = fileScanner.nextLine();
+                String[] splitData = theNextLine.split(",");
+                String name = splitData[0];
+                int calories = Integer.parseInt(splitData[1]);
+                int fiber = Integer.parseInt(splitData[2]);
+                int carbohydrates = Integer.parseInt(splitData[3]);
+                double cups = Double.parseDouble(splitData[4]);
 
+            }
+        } catch (Exception e) {
+            System.out.println("OOPS!");
+        }
 
     }
 
