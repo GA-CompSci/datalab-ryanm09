@@ -32,7 +32,12 @@ public class CerealRunner3 {
      * @return ArrayList of cereals meeting criteria
      */
     public static ArrayList<Cereal> filterCarbsPerCup(int min, int max) {
-
+        ArrayList<Cereal> carbcup = new ArrayList<>();
+        for (Cereal loopy : cereals){
+            if(loopy >= min && loopy <= max){
+                carbcup.add(loopy);
+            }
+        } 
 
 
 

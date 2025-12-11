@@ -40,7 +40,7 @@ public class CerealRunner2 {
      * 7. Handle FileNotFoundException with try-catch
      */
     public CerealRunner2() {
-        cereals = new ArrayList<Cereal>();
+        cereals = new ArrayList<Cereal>();  //init your instance variable
 
         try {
             File cerealFile = new File("cerealSubset.csv");
@@ -52,7 +52,7 @@ public class CerealRunner2 {
                     System.out.println("Loaded " + cereals.size() + " cereals.\n");
                     break;
                 }
-                //do more stuff 
+                //PARSE THEN ADD DATA TO COLLECTION
                 String theNextLine = fileScanner.nextLine();
                 String[] splitData = theNextLine.split(",");
                 String name = splitData[0];
@@ -60,10 +60,11 @@ public class CerealRunner2 {
                 int fiber = Integer.parseInt(splitData[2]);
                 int carbohydrates = Integer.parseInt(splitData[3]);
                 double cups = Double.parseDouble(splitData[4]);
-
+                cereals.add(new Cereal(name, calories, fiber, carbohydrates, cups));
             }
         } catch (Exception e) {
-            System.out.println("OOPS!");
+            //catch all exceptions is very lazy programming
+            System.out.println("OOPS! Error: " + e);
         }
 
     }
@@ -72,7 +73,7 @@ public class CerealRunner2 {
      * Getter method for the cereals ArrayList
      */
     public ArrayList<Cereal> getCereals() {
-        return null;  // Fix this
+        return cereals;
     }
 
     /**
@@ -80,7 +81,7 @@ public class CerealRunner2 {
      */
     public static void main(String[] args) {
         // Create a CerealRunner2 object
-
+        CerealRunner2 theInstanceOfThisFile = new CerealRunner2();
 
         // Print the number of records created
         // Should output: "76 records created."

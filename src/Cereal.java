@@ -34,15 +34,16 @@ public class Cereal {
 
 
     // Write your 5 getter methods here
+
     // getName() - returns String
-    // getCalories() - returns int
-    // getFiber() - returns int
-    // getCarbohydrates() - returns int
-    // getCups() - returns double
     public String getName() { return name; }
+    // getCalories() - returns int
     public int getCalories() { return calories; }
+    // getFiber() - returns int
     public int getFiber() { return fiber; }
+    // getCarbohydrates() - returns int
     public int getCarbohydrates() { return carbohydrates; }
+    // getCups() - returns double
     public double getCups() { return cups; }
 
 
@@ -50,8 +51,9 @@ public class Cereal {
     // Should return a String with all the cereal data
     // Example: "100% Bran - Calories: 70, Fiber: 10g, Carbs: 5g, Serving: 0.33 cups"
     
+    @Override
     public String toString(){
-        return name + " - Calories: " + calories + ", Fiber: " + fiber + ", Carbs: " + carbohydrates + ", Serving: " + cups;
+        return name + " - Calories: " + calories + ", Fiber: " + fiber + "g, Carbs: " + carbohydrates + "g, Serving: " + cups;
     }
 
 
