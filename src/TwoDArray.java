@@ -57,7 +57,7 @@ public class TwoDArray {
         }
         System.out.println("FAIL COUNT: " + count);
 
-        //SAME WAY, BUT TRY TO DO FOR EACH LOOP INSTEAD
+        //SAME WAY, BUT STANDARD FOR LOOP INSTEAD
 
         int count2 = 0;
         for(int row = 0; row < mindBlowingCollectionOfScores.length; row++){
